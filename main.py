@@ -112,7 +112,11 @@ async def play(
     vc = interaction.guild.voice_client
 
     if vc is None:
-        vc = await voice_channel.connect()
+        vc = await voice_channel.connect(
+    reconnect=True,
+    timeout=30,
+    self_deaf=True
+)
 
     elif vc.channel != voice_channel:
         await interaction.response.send_message(
