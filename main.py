@@ -4,6 +4,9 @@ import yt_dlp
 import asyncio
 import os
 
+print(discord.__version__)
+print(discord.__file__)
+
 intents = discord.Intents.default()
 intents.message_content = True
 
